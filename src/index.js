@@ -2,17 +2,29 @@ import $ from "jquery";
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/styles.css";
-import Triangle from "./triangle.js";
+import Currency from "./currency-exchange";
 
 $(document).ready(function () {
-  $("#triangle-checker-form").submit(function (event) {
+  $("#currency-exchange").submit(function (event) {
     event.preventDefault();
+    let amount = parseInt($("#amount").val());
+    let initialCurrency = $("#baseCurrency").val();
+    let convertedCurrenncy = $("#convertedCurrency").val();
+    console.log(amount, initialCurrency, convertedCurrenncy);
 
-    const length1 = $("#length1").val();
-    const length2 = $("#length2").val();
-    const length3 = $("#length3").val();
-    const triangle = new Triangle(length1, length2, length3);
-    const response = triangle.checkType();
-    $("#response").append("<p>" + response + "</p>");
+    let promise = Currency.exchange(
+      initialCurrency,
+      convertedCurrenncy,
+      amount
+    );
+
+    promise
+      .then(function (response) {
+        let newObject = JSON.parse(response);
+        console.log(newObject.conversion_result);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   });
 });
