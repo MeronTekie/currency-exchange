@@ -16,7 +16,7 @@
 
 ## Description
 
-The website is built to make the use of any currency accessible to customers by creating a very competitive rate exchange to most of the available currencies across the globe.The inspiration behind the project is to create a relief to any traveller by converting the currency they have to local currency and make them be able to shop and enjoy their stay without any worry.
+The website is built to make the use of any currency accessible to customers by creating a very competitive rate exchange to most of the available currencies across the globe.The inspiration behind the project is to create a relief to any traveler by converting the currency they have to local currency and make them be able to shop and enjoy their stay without any worry.
 
 ## Setup/Installation Requirements
 
@@ -40,4 +40,4 @@ The website is built to make the use of any currency accessible to customers by 
 
 [MIT](https://opensource.org/licenses/MIT)
 
-- Cpoyright (c) Meron G. Tekie 2022
+- Copyright (c) Meron G. Tekie 2022
