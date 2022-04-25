@@ -10,7 +10,6 @@ $(document).ready(function () {
     let amount = parseInt($("#amount").val());
     let initialCurrency = $("#baseCurrency").val();
     let convertedCurrenncy = $("#convertedCurrency").val();
-    console.log(amount, initialCurrency, convertedCurrenncy);
 
     let promise = Currency.exchange(
       initialCurrency,
@@ -21,10 +20,22 @@ $(document).ready(function () {
     promise
       .then(function (response) {
         let newObject = JSON.parse(response);
-        console.log(newObject.conversion_result);
+        console.log(newObject);
+        $("#base-currency").text(
+          `Your  intial currency is: ${newObject.base_code}`
+        );
+        $("#current-rate").text(
+          `The current exchange rate is: ${newObject.conversion_rate}`
+        );
+        $("#total-amount").text(
+          `Your total amount is: ${newObject.conversion_result} ${newObject.target_code}`
+        );
       })
       .catch(function (error) {
-        console.log(error);
+        let errorMessage = JSON.parse(error);
+        $("#error").text(
+          `${errorMessage.result}: The currency code does not work make sure you enter a valid one`
+        );
       });
   });
 });

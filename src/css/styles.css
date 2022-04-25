@@ -1,3 +1,21 @@
 body {
-  background-color: lightblue;
+  background-color: rgb(198, 198, 198);
+}
+h1 {
+  color: rgb(106, 72, 52);
+  text-align: center;
+  text-decoration: underline;
+  font-size: 60px;
+}
+h3 {
+  text-align: center;
+  padding: 90px;
+  font-size: 40px;
+  border: 10px solid rgb(211, 243, 117);
+  font-style: italic;
+  font-family: cursive;
+  color: rgb(209, 43, 117);
+}
+p {
+  font-size: 25px;
 }
